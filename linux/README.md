@@ -182,6 +182,45 @@ ___
 
 - **ssh** Es un comando que permite conectar en forma segura a otra terminal, los parametros son los siguientes ssh {usuario}@{host destino} 
 
+## Que son y como se utilizan las variables de entorno.
+- Es una definicion global de variable que le brinda acceso a uno o todos los procesos.
+    ```bash
+            # ejemplo con variable PATH
+            $ echo $PATH
+            # Ejemplo de respuesta.
+            /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+    ```
+- **export** Asigna una variable global para toda la sesion.
+    ```bash
+            # ejemplo de asignacion.
+            $ export MI_VARIBLE=nombre_variable
+            # Invocando la variable
+            $ echo $MI_VARIBLE
+    ```
+- **VAR=** Asigna una variable global unicamente para comandos especiales No sobre escribe la variable global.
+    ```bash
+            # ejemplo de asignacion.
+            $ MI_VARIBLE=/home php ejemplo.php
+    ```
+
+## Como dejar tareas programadas.
+- **at**
+    ```bash
+            # ejemplo de asignacion.
+            $ at now +2 minutes
+            at> echo "Hola mundo" > /home/usuario/hola.txt
+            at> <EOT>
+            # Control E para salir
+    ```
+
+- **cron** Utiliza un archivo crontab para programar las tareas.
+    ```bash
+            # ver y editar las tareas del archivo
+            $ crontab -e
+            # Ejemlo de edicion del archivo.
+            # 45 12 * * * echo "Hola" > hola.txt
+    ```
+
 
 
 
