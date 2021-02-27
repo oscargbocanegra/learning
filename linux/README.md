@@ -178,8 +178,19 @@ ___
             $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.11.1-linux-x86_64.tar.gz
     ```
 
+## Acceso Seguro a otras terminales.
+
+- **ssh** Es un comando que permite conectar en forma segura a otra terminal, los parametros son los siguientes ssh {usuario}@{host destino} 
 
 
+
+
+### Trucos.
+- **Enviar correos @ a traves de la consola**
+    ```bash
+            # Enviando un mensaje de correo por consola
+            $ echo "probando" | mail -s "Probando mensaje" destinatario@correo.com
+    ```
 
 ---
 Author
