@@ -160,7 +160,23 @@ ___
             # Buscarndo archivos modificados (-type) en un tiempo mayor a 7 dias y moviendo el resultado a una carpeta backup.
             $ find . -type f -mtime +7 -exec cp {} ./backup/ \;
     ```
+## Comandos HTTP
+- **curl** Se usa para hacer pedidos hacia un servidor y se genera una respuesta.
+    ```bash
+            # Realizando peticion a url
+            $ curl https://platzi.com
+            # Realizando peticion a url con la opcion -v muestra toda a comunicacion http
+            $ curl -v https://platzi.com
+            # Realizando peticion a url con opcion -v muestra toda la comunicacion http y solo encabezados redireccionando la salida estandard a un espacio null
+            $ curl -v https://platzi.com > /dev/null
 
+    ```
+
+- **wget** Se usa para hacer pedidos hacia un servidor y se genera una respuesta adicionalmente esta peticion permite hacer descargas.
+    ```bash
+            # Realizando una descarga del producto elasticsearch usan wget.
+            $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.11.1-linux-x86_64.tar.gz
+    ```
 
 
 
