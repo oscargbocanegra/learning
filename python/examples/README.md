@@ -1,0 +1,19 @@
+Examples.
+___
+- **conversor.py** >> Programa que realiza conversion de modenas
+- **condicionales.py** >> Programa que valida condiones con la funcion IF.
+- **funciones.py** >> Programa que pide una opcion y con una funcion se agrupa el mensaje.
+- **conversion_minutos.py** >> Programa que recibe una cantidad de minutos y muestre por pantalla a cuantas horas y minutos corresponde. 
+- **conversiongrados.py** >> programa que convierta un valor dado en grados Fahrenheit a grados Celsius. 
+- **descuento_compras.py** >> Una tienda ofrece un descuento del 15% sobre el total de la compra y un cliente desea saber cuanto deberá pagar finalmente por su compra.
+- **distancia_puntos_cartesiano.py** >> Pide al usuario dos pares de números x1,y2 y x2,y2, que representen dos puntos en el plano. Calcula y muestra la distancia entre ellos.
+- **distancia_vehiculos.py** >> Dos vehículos viajan a diferentes velocidades (v1 y v2) y están distanciados por una distancia d. El que está detrás viaja a una velocidad mayor. Se pide hacer un algoritmo para ingresar la distancia entre los dos vehículos (km) y sus respectivas velocidades (km/h) y con esto determinar y mostrar en que tiempo (minutos) alcanzará el vehículo más rápido al otro.
+- **hipotenusa.py** >> Dado los catetos de un triangulo rectangulo calcular su hipotenusa.
+- **intercambio_variables.py** >> Dadas dos variables numéricas A y B, que el usuario debe teclear, se pide realizar un algoritmo que intercambie los valores de ambas variables y muestre cuanto valen al final las dos variables.
+- **mayor_edad.py** >> Valida la mayoria de edad ingresando el dato por teclado.
+- **notas_alumno.py** >> # Un alumno desea saber cual será su calificación final en la materia de Algoritmos. dicha calificación se compone de los siguientes porcentajes: 1) 55% del promedio de sus tres calificaciones parciales. 2) 30% de la calificación del examen final. 3) 15% de la calificación de un trabajo final.
+- **numero_invertido.py** >> Dado un número de dos cifras, diseñe un algoritmo que permita obtener el número invertido.
+- **perimetroarea.py** >> Calcular el perímetro y área de un rectángulo dada su base y su altura.
+- **raiz_numero.py** >> Realizar un algoritmos que lea un número y que muestre su raíz cuadrada y su raíz cúbica. Python3 no tiene ninguna función predefinida que permita calcular la raíz cúbica, ¿Cómo se puede calcular?
+- **sumarestamultip.py** >> Dados dos números, mostrar la suma, resta, división y multiplicación de ambos. 
+- **valor_absoluto.py** >> Pide al usuario dos números y muestra la "distancia" entre ellos (el valor absoluto de su diferencia, de modo que el resultado sea siempre positivo).

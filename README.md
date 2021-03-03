@@ -11,8 +11,8 @@ ___
 
 ## Learning Python
 
-   - [Principles Python](./python-programming/README.md).
-   - [Exercises with Python](./python-programming/examples/README.md).
+   - [Principles Python](./python/README.md).
+   - [Exercises with Python](./python/examples/README.md).
 
 
 
