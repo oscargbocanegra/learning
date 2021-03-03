@@ -9,29 +9,22 @@ Elige una opcion:
 """
 opcion = input(menu)
 
+def conversor(tipo_pesos, valor_dolar):
+    pesos = input("¿Cuantos pesos " + tipo_pesos + " tienes? ")
+    pesos =float(pesos)
+    dolares = pesos / valor_dolar
+    dolares = round(dolares,2)
+    dolares = str(dolares)
+    print ("Tienes $ " + dolares + " Dolares")    
+
 if opcion == '1':
-    pesos = input("¿Cuantos pesos colombianos tienes? ")
-    pesos =float(pesos)
-    valor_dolar = 3875
-    dolares = pesos / valor_dolar
-    dolares = round(dolares,2)
-    dolares = str(dolares)
-    print ("tienes $ " + dolares + " Dolares")    
+    conversor("Colombianos", 3875)
+    
 elif opcion == '2':
-    pesos = input("¿Cuantos pesos Argentinos tienes? ")
-    pesos =float(pesos)
-    valor_dolar = 65
-    dolares = pesos / valor_dolar
-    dolares = round(dolares,2)
-    dolares = str(dolares)
-    print ("tienes $ " + dolares + " Dolares")    
+    conversor("Argentinos", 65)
+
 elif opcion == '3':
-    pesos = input("¿Cuantos pesos Mexicanos tienes? ")
-    pesos =float(pesos)
-    valor_dolar = 24
-    dolares = pesos / valor_dolar
-    dolares = round(dolares,2)
-    dolares = str(dolares)
-    print ("tienes $ " + dolares + " Dolares")    
+    conversor("Mexicanos", 24)
+
 else:
     print("Ingresa una opcion correcta")

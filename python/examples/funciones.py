@@ -6,6 +6,8 @@
 # imprimir_mensaje()
 # imprimir_mensaje()
 
+
+
 def conversacion(mensaje):
     print("Hola")
     print("Como estas")
@@ -22,3 +24,11 @@ elif opcion == 3:
     conversacion("Elegiste la opcion 3 ")
 else:
     conversacion("No elegiste opcion ")
+
+# def suma(a,b):
+#     print("Se sumn 2 numeros")
+#     resultado = a + b
+#     return resultado
+
+# sumatoria = suma(1,4)
+# print(sumatoria)

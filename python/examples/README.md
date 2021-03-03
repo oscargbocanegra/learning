@@ -17,3 +17,6 @@ ___
 - **raiz_numero.py** >> Realizar un algoritmos que lea un número y que muestre su raíz cuadrada y su raíz cúbica. Python3 no tiene ninguna función predefinida que permita calcular la raíz cúbica, ¿Cómo se puede calcular?
 - **sumarestamultip.py** >> Dados dos números, mostrar la suma, resta, división y multiplicación de ambos. 
 - **valor_absoluto.py** >> Pide al usuario dos números y muestra la "distancia" entre ellos (el valor absoluto de su diferencia, de modo que el resultado sea siempre positivo).
+- **calculo_media.py** >> Calcular la media de tres números pedidos por teclado.
+- **comision_vendedor.py** >> Un vendedor recibe un sueldo base mas un 10% extra por comisión de sus ventas, el vendedor desea saber cuanto dinero obtendrá por concepto de comisiones por las tres ventas que realiza en el mes y el total que recibirá en el mes tomando en cuenta su sueldo base y comisiones.
+- **palindromo.py** >> Programa que valida si una palabra es igual al derecho y al reves
