@@ -25,3 +25,4 @@ ___
 - **brak_continue.py** >> Programa basico que explica el lfuncionamiento de las palabras break y continue
 - **prueba_primalidad** >> Progama que busca si un numero es primo o no.
 - **adivina_numero.py** >> Juego que genera un numero aleatorio y el usuario tiene que adivinar cual es ingresando por consola el nuero.
+- **dicionarios.py** >> Ejemplo que muestra como funciona un diccionario y como se puede recorer con un for para imprimir sus valores.
