@@ -20,3 +20,8 @@ ___
 - **calculo_media.py** >> Calcular la media de tres números pedidos por teclado.
 - **comision_vendedor.py** >> Un vendedor recibe un sueldo base mas un 10% extra por comisión de sus ventas, el vendedor desea saber cuanto dinero obtendrá por concepto de comisiones por las tres ventas que realiza en el mes y el total que recibirá en el mes tomando en cuenta su sueldo base y comisiones.
 - **palindromo.py** >> Programa que valida si una palabra es igual al derecho y al reves
+- **bucles.py** >> Programa basico que explica el funcionamiento de un bucle while
+- **for.py** >> Programa basico que explica el funcionamiento de un bucle for
+- **brak_continue.py** >> Programa basico que explica el lfuncionamiento de las palabras break y continue
+- **prueba_primalidad** >> Progama que busca si un numero es primo o no.
+- **adivina_numero.py** >> Juego que genera un numero aleatorio y el usuario tiene que adivinar cual es ingresando por consola el nuero.
