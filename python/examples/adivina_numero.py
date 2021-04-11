@@ -17,6 +17,5 @@ def run():
     else:
         print('Realizaste ' +str( intentos )+ ' intentos para encontrar el Numero' )
 
-
 if __name__ == '__main__':
     run()
