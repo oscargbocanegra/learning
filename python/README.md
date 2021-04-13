@@ -19,7 +19,7 @@ ___
       - [Longitud.](#longitud)
       - [Comparación.](#comparación)
   - [Tipo de datos mapas o diccionario (dict) (En Construccion).](#tipo-de-datos-mapas-o-diccionario-dict-en-construccion)
-- [***Funciones. (En Construccion).***](#funciones-en-construccion)
+- [***Funciones.***](#funciones)
   - [abs(x)](#absx)
   - [divmod(x,y)](#divmodxy)
   - [hex(x)](#hexx)
@@ -28,6 +28,9 @@ ___
   - [round(x,[y])](#roundxy)
   - [input()](#input)
   - [print()](#print)
+- [***Creando entornos virtuales.***](#Creando-entornos-virtuales)
+- [***Instalando dependencias en entornos virtuales.***](#Instalando-dependencias-en-entornos-virtuales)
+
 - [Ejercicios.](#ejercicios)
 - [Creditos.](#creditos)
 ___
@@ -175,7 +178,7 @@ Se puede comparar caracter a caracterobtener la longitud de la cadena con la fun
   ``` 
 ### Tipo de datos mapas o diccionario (dict) (En Construccion).
 ___
-## ***Funciones. (En Construccion).***
+## ***Funciones.***
   ### abs(x)
   - Devuelve al valor absoluto de un número.
       ```py
@@ -232,6 +235,61 @@ ___
       2 2.500000 2.5
     ```
 ___
+## ***Creando entornos virtuales***
+- Crear una carpeta del proyecto.
+- Comando para crear el entorno virtual.
+    ```py
+      python3 -m virtualenv venv
+    ```
+  - Para activar el entorno virtual en linux.
+  ```py
+      source venv/bin/activate
+    ```
+  - Para Windows
+    ```py
+      .\venv\Scripts\activate
+    ```
+- Comando para des activar el entorno virtual.
+  ```py
+      deactivate
+    ```
+- Comando para crear un alias que reduce el comando para el ingreso.
+  ```py
+      alias avenv=.\venv\Scripts\activate
+    ```
+- Configurar un alias permanente en linux
+  ```py
+      - Ejecutar sudo nano ~/.bashrc
+      - Ir al final del archivo
+      - Agregar el comando: alias avenv='source venv/bin/activate'
+      - Guardar el archivo ctrl + o y luego salir con ctrl + x
+      - Reejecutar la configuración de la terminal: source ~/.bashrc
+      - Activar el entorno vitual avenv
+    ```
+
+## ***Instalando dependencias en entornos virtuales***
+- Comando para revisar dependencias instaladas
+  ```py
+      pip3 freeze
+    ```
+- Comando para instalar dependencias
+  ```py
+      pip install <paquete>
+    ```
+- Comando para registrar las dependencias y sus versiones a un archivo plano.
+  ```py
+      pip3 freeze > requeriements.txt
+    ```
+- Comando para instalar dependencias registradas en otro entorno virtual.
+  ```py
+      pip install -r requeriements.txt
+    ```
+- Comando para desinstalar dependencias
+  ```py
+      pip uninstall <paquete>
+    ```
+
+
 # Ejercicios.
 - Todos los ejemplos se encuentran en la carpeta `examples`.
   - 
