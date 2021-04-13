@@ -266,7 +266,6 @@ ___
       - Reejecutar la configuración de la terminal: source ~/.bashrc
       - Activar el entorno vitual avenv
     ```
-
 ## ***Instalando dependencias en entornos virtuales***
 - Comando para revisar dependencias instaladas
   ```py
@@ -288,11 +287,12 @@ ___
   ```py
       pip uninstall <paquete>
     ```
-
-
+- Comando 
+```py
+      pip 
+    ```
 # Ejercicios.
 - Todos los ejemplos se encuentran en la carpeta `examples`.
-  - 
 
 ---
 Author
