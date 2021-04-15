@@ -9,13 +9,6 @@ ___
 
    - [Commands](./docker/README.md) 
 
-## Learning Python
-
-   - [Basic Python](./python/README.md).
-   - [Exercises with Python](./python/examples/README.md).
-
-
-
 
 ___
 Author

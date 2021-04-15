@@ -1,6 +1,0 @@
-DEL + {variable} = comando para borrar una variable.
-IN + {variable} = valida si existe un valor en una cadena.
-    vocales = "aeiou"
-    variable = list(vocales)
-    "a" in vocales 
-NOT IN = Negacion de la opcion IN
