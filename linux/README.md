@@ -65,7 +65,7 @@ ___
     $ grep palabra clave$ archivo.txt
     $ grep ^palabra clave archivo.txt
     ```
-## Utilizades procesos
+## Monitoreo de recursos del sistema
 
 - **&** Sirve para enviar el proceso a un segundo plano.
     ```bash
@@ -79,8 +79,12 @@ ___
 - **kill** Envia señales a los procesos para terminarlos.
 - **kill -9** Envia señal de cortar inmediatamente.
 - **killall archivoejecutable** Envia señal de cortar inmediatamente.
+- **nohub** Genera un archivo de nombre nohub.out que almacena la información del proceso.
+- **./** Ejecuta un proceso.
+- **ps auxf | sort -nr -k 3 | head -5** Comando para conocer los procesos que mas CPU consume el S.O
+- **ps auxf | sort -nr -k 4 | head -5** Comando para conocer los procesos que mas RAM consume el S.O
 
-## Permisos sobre archivos.
+## Permisos y Modificaciones
 
 - **ls -l** Comando que permite visualizar los privigelios de los archivos.
 <p align="center"> <img src ="./images/permisos.png"></p>
@@ -93,9 +97,6 @@ ___
     ```bash
         $ rw-rw-r-- 1 usuario usuario 2318 feb 26 17:45 README.md
     ```
-
-## Modificacion de Permisos.
-
 - **chmod** Cambia permisos de lectura escritura y ejecucion al archivo teniendo en cuenta el usuario - grupo y otros.
     ```bash
         # Añadir permisos de ejecucion al usuario 
@@ -145,7 +146,7 @@ ___
             # Des-agrupar y des-comprimir todos los archivos de la carpeta backup.
             $ tar xzf backup.tgz
     ```
-## Busqueda de archivos.
+## Busquedas.
 - **locate** Permite hacer una busqueda de un archivo en todo el sistema.
     ```bash
             # Buscarndo archivo en el sistema
@@ -221,9 +222,6 @@ ___
             # 45 12 * * * echo "Hola" > hola.txt
     ```
 
-
-
-
 ### Trucos.
 - **Enviar correos @ a traves de la consola**
     ```bash
@@ -241,3 +239,4 @@ Fuentes.
 - [Platzi](https://platzi.com/)
     - Curso Intoduccion linea de comandos
     - Blog [Domina la Administración de Usuarios y Permisos en Servidores Linux](https://platzi.com/blog/administracion-usuarios-servidores-linux/)
+    - Blog [Mas de 400 comandos linux](https://blog.desdelinux.net/mas-de-400-comandos-para-gnulinux-que-deberias-conocer/)
