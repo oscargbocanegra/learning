@@ -1,6 +1,6 @@
 
-# Comandos Linux
-
+# Indice Linux
+_____
 ## Comandos para trabajar desde la ubicaciòn.
 - **man** Comando permite invocar los manuales en los    diferentes comandos.
     ```bash
@@ -22,8 +22,8 @@
     ```bash
     $ ls -R 
     ```
+_____
 ## Comandos para mover o copiar
-
 - **cp** Copia un archivo a un directorio.
     ```bash
     $ cp [archivo a copiar] [/ruta directorio a copiar]
@@ -40,10 +40,8 @@
     ```bash
     $ ln -s [target_directory_path] [linked_directory_name_path]
     ```
-___
-
+_____
 ## Utilizades batch 
-
 - **cat** Muestra el contenido completo de un archivo.
     ```bash
     $ cat texto.txt
@@ -65,8 +63,8 @@ ___
     $ grep palabra clave$ archivo.txt
     $ grep ^palabra clave archivo.txt
     ```
+_____
 ## Monitoreo de recursos del sistema
-
 - **&** Sirve para enviar el proceso a un segundo plano.
     ```bash
     $ mysql -h 127.0.0.1 -u root -p1234 < dump-sql &
@@ -83,9 +81,8 @@ ___
 - **./** Ejecuta un proceso.
 - **ps auxf | sort -nr -k 3 | head -5** Comando para conocer los procesos que mas CPU consume el S.O
 - **ps auxf | sort -nr -k 4 | head -5** Comando para conocer los procesos que mas RAM consume el S.O
-
+_____
 ## Permisos y Modificaciones
-
 - **ls -l** Comando que permite visualizar los privigelios de los archivos.
 <p align="center"> <img src ="./images/permisos.png"></p>
 
@@ -123,9 +120,8 @@ ___
             $ sudo chown nuevo-usuario:nuevo-grupo archivo.txt
         ```
 - **chgrp** Cambia quien es el grupo de usuarios que puede acceder 
-
+_____
 ## Compresion de Archivos.
-
 - **gizp** Comando para comprimir los archivos.
     ```bash
             # Comprimiendo el archivo.
@@ -146,6 +142,7 @@ ___
             # Des-agrupar y des-comprimir todos los archivos de la carpeta backup.
             $ tar xzf backup.tgz
     ```
+_____
 ## Busquedas.
 - **locate** Permite hacer una busqueda de un archivo en todo el sistema.
     ```bash
@@ -161,6 +158,7 @@ ___
             # Buscarndo archivos modificados (-type) en un tiempo mayor a 7 dias y moviendo el resultado a una carpeta backup.
             $ find . -type f -mtime +7 -exec cp {} ./backup/ \;
     ```
+_____
 ## Comandos HTTP
 - **curl** Se usa para hacer pedidos hacia un servidor y se genera una respuesta.
     ```bash
@@ -170,19 +168,13 @@ ___
             $ curl -v https://platzi.com
             # Realizando peticion a url con opcion -v muestra toda la comunicacion http y solo encabezados redireccionando la salida estandard a un espacio null
             $ curl -v https://platzi.com > /dev/null
-
     ```
-
 - **wget** Se usa para hacer pedidos hacia un servidor y se genera una respuesta adicionalmente esta peticion permite hacer descargas.
     ```bash
             # Realizando una descarga del producto elasticsearch usan wget.
             $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.11.1-linux-x86_64.tar.gz
     ```
-
-## Acceso Seguro a otras terminales.
-
-- **ssh** Es un comando que permite conectar en forma segura a otra terminal, los parametros son los siguientes ssh {usuario}@{host destino} 
-
+_____
 ## Que son y como se utilizan las variables de entorno.
 - Es una definicion global de variable que le brinda acceso a uno o todos los procesos.
     ```bash
@@ -203,7 +195,7 @@ ___
             # ejemplo de asignacion.
             $ MI_VARIBLE=/home php ejemplo.php
     ```
-
+_____
 ## Como dejar tareas programadas.
 - **at**
     ```bash
@@ -213,7 +205,6 @@ ___
             at> <EOT>
             # Control E para salir
     ```
-
 - **cron** Utiliza un archivo crontab para programar las tareas.
     ```bash
             # ver y editar las tareas del archivo
@@ -221,6 +212,65 @@ ___
             # Ejemlo de edicion del archivo.
             # 45 12 * * * echo "Hola" > hola.txt
     ```
+_____
+## Analisis de parametros de red
+- **ifconfig** Lista las tarjetas con las direcciones asignadas.
+- **ip a** Lista las direcciones ip de la maquina
+- **hostname** Lista el nombre del host
+- **route -n** Lista la puerta de enlace predeterminada o dispositivo que permite la conexion a internet.
+- **nslookup** Permite validar cuales son las IP de ciertos dominios.
+- **curl** Permite realizar simulaciones a peticiones como lo hace postman.
+- **wget** Permite realizar descarga de paquetes
+_____
+## Manejo de paquetes basados en Debian
+- **sudo apt-get update** Actualiza la información local de los repositorios ubuntu
+- **sudo apt-get upgrade** Actualiza todos los programas instalados en la maquina.
+- **sudo apt search paquete** Realiza busqueda de paquetes
+- **sudo apt-cache search paquete** Realiza busqueda de paquetes
+- **dpkg -l** Muestra los paquetes instalados.
+- **sudo dpkg-reconfigure tzdata** Realiza una nueva configuracion de la zona horaria.
+- **sudo snap install canonical-livepatch** Paquete para realizar instalaciones sin necesidad de reiniciar el host.
+_____
+## Desempaquetado, descompresión, compilación e instalación de paquetes
+- **sudo apt install {librerias}** Descarga las librerias que son necesarias para el proyecto.
+- c**wget {url con el archivo comprimido}** Descarga las librerias que son necesarias para el proyecto.
+- **tar xvzf {libreria}.tar.gz** Descomprime el archivo descargado en el punto anterior.
+
+_____
+## Usuarios administracion del sistema operativo
+- **id** Muestra el identificador del usuario.
+- **whoami** Muestra el nombre del usuario.
+- **cat /etc/passwd** Ruta donde se encuentra ubicado el registro de los usuarios.
+- **cat /etc/shadow** Ruta donde se encuentra ubicado el archivo de contraseñas.
+- **passwd** Comando para modificar contraseñas.
+- **sudo useradd {usuario}** Comando para crear usuarios al sisitema -- NO Crea el Home --.
+- **sudo adduser {usuario}** Comando para crear usuarios configurando contraseña -- Crea el Home --.
+- **sudo userdel {usuario}** Comando para eliminar usuarios al sisitema.
+- **cat /usr/sbin/adduser** Permite ver el contenido de la estructura de creacion de usuarios.
+- **su - {usuario}** Comando para cambiar de usuario en la consola.
+- **groups {usuario}** Comando para validar grupo al que pertenece el usuario.
+- **sudo gpasswd -a {usuario}{grupo}** Comando para agregar usuarios a un grupo.
+- **sudo gpasswd -d {usuario}{grupo}**Comando para remover usuarios de un grupo.
+- **usermod -aG {grupo} {usuario}** Comando para agregar usuarios a un grupo.
+- **sudo -l** Comando para revisar los permisos de usuario.
+_____
+## PAM para el control de acceso de usuarios
+- **/etc/pam.d** Ruta donde se valida archivos de configuracion respecto a PAM.
+- **/lib64/security** Ruta de acceso a las librerias de seguridad.
+- **pwscore** Comando que valida la seguridad de una contrseña.
+- **ulimit -a** Comando para listar los permisos que tiene el usuario para ejecutar.
+- **/etc/security/time.conf** Archivo de configuracion para limitar el acceso SSH de usuarios
+____
+## Autenticacion de clientes y servidores sobre SSH.
+- **ssh** Es un comando que permite conectar en forma segura a otra terminal, los parametros son los siguientes ssh {usuario}@{host destino}
+- **sudo vi /etc/ssh/sshd_config** Archivo de configuracion reglas ssh
+- **ssh-keygen** Commando para generar las llaves publicas y privadas.
+- **ls .ssh** Comando para listar los archivos llaves.
+- **ssh-copy-id -i ~/.ssh/id_rsa.pub {usuario}@{ip_servidor}** Comando para copiar llave publica a un servidor.
+- **ssh {usuario}@{servidor}** Comando para conectar por ssh al servidor una vez realizado punto anterior.
+- **ssh -vvvv {usuario}@{servidor}** Comando para revisar fallas de conexion al servidor. Entre mas vvv tenga mayor es el detalle.
+_____
+
 
 ### Trucos.
 - **Enviar correos @ a traves de la consola**
@@ -237,6 +287,7 @@ Author
 ___
 Fuentes.
 - [Platzi](https://platzi.com/)
-    - Curso Intoduccion linea de comandos
-    - Blog [Domina la Administración de Usuarios y Permisos en Servidores Linux](https://platzi.com/blog/administracion-usuarios-servidores-linux/)
-    - Blog [Mas de 400 comandos linux](https://blog.desdelinux.net/mas-de-400-comandos-para-gnulinux-que-deberias-conocer/)
+    - Curso Intoduccion linea de comandos 
+    - [Curso Administración de Servidores Linux](https://platzi.com/clases/1667-linux/22840-autenticacion-de-clientes-y-servidores-sobre-ssh/)
+    - [Blog Domina la Administración de Usuarios y Permisos en Servidores Linux](https://platzi.com/blog/administracion-usuarios-servidores-linux/)
+    - [Blog - Mas de 400 comandos linux](https://blog.desdelinux.net/mas-de-400-comandos-para-gnulinux-que-deberias-conocer/)
