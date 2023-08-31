@@ -1,34 +1,87 @@
-h1{
-    background-color: green;
-}
-
-.clase{
-    color: green;
-}
-
-#identificador{
-    color: blueviolet;
-}
-
-p{
-    color: brown !important;
-}
-
-/*Selector universal*/
-/*
-*{
+/**{
     font-size: 50px;
+    color: hotpink;
+}*/
 
+/*h1{
+    background-color: indigo;
 }
 
 h2{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 48px;
 }
 
+p{
+    text-align: center;
+}*/
 
-h1,h2,h3{
+/*h1,h2,h3,h4,h5,h6,p,a{
     color: red;
+    background-color: black;
 }
-*/
 
+h1{
+    font-size: 72px;
+}*/
+
+/* a{
+    background-color: green;
+}*/
+
+/*p.parrafo{
+    color: white;
+    font-size: 48px;
+    background-color: black;
+}
+
+.parrafo2{
+    color: white;
+    font-size: 24px;
+    background-color: black;
+}
+
+a.parrafo{
+    color: white;
+    font-size: 48px;
+    background-color: black;
+}
+
+#identificacion{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: chartreuse;
+}*/
+
+/*h1 > a{
+    color: coral;
+    font-size: 48px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: darkslategray;
+}
+
+p > a{
+    color: firebrick;
+    font-size: 72px;
+}*/
+
+/*h2 + h3{
+    color: fuchsia;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}*/
+
+/*[class]{
+    color: red;
+    font-size: 48px;
+    background-color: rosybrown;
+}*/
+
+/*[class="parrafo"]{
+    color: seagreen;
+    font-weight: bold;
+}*/
+
+.parrafo{
+    font-size: 10.8px;
+}
