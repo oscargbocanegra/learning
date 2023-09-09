@@ -2,50 +2,61 @@ agenda_telefonica = dict()
 
 print ("Bienvenido a mi Agenda Telefonica...")
 
+def imprimir_operacion(nombre_operacion):
+    print ("---------- Agenda Telefonica ----------")
+    print (nombre_operacion)
+    print ("---------------------------------------")
+
 def agregar_contacto():
     print()
     nombre = input("Nombre del contacto: ").capitalize()
     numero = input("Numero del contacto: ")
     agenda_telefonica[nombre] = numero
-    print('\n----- Agenda Telefonica ------ \n * Contacto Agregado \n------------------------------')
+    imprimir_operacion("* Contacto Agregado")
 
 def remover_contacto():
-    print()
     nombre = input("Nombre del contacto a remover: ").capitalize()
+    nombre_operacion = None
 
     try:
         del agenda_telefonica[nombre]
     except KeyError:
-        print('\n----- Agenda Telefonica ------ \n * Este contaacto no existe \n------------------------------')
+        nombre_operacion = "* Este contaacto no existe"
     else:
-        print('\n----- Agenda Telefonica ------ \n * Contacto Removido \n------------------------------')
+        nombre_operacion = "* Contacto Removido"
+    imprimir_operacion(nombre_operacion)
 
 
 def actualizar_contacto():
-    print()
+    nombre_operacion = None
     nombre = input("Nombre del contacto a actualizar: ").capitalize()
     numero = input("Nuevo Numero del contacto: ")
-
     agenda_telefonica[nombre] = numero
-    print('\n----- Agenda Telefonica ------ \n * Contacto Actualizado \n------------------------------')
+    imprimir_operacion("* Contacto Actualizado")
 
 def ver_contacto():
     nombre = input("Nombre del contacto: ").capitalize()
+    nombre_operacion = None
     
     try:
-        print (f'\n----- Agenda Telefonica ------ \n{nombre}  --  {agenda_telefonica[nombre]} \n------------------------------')
+        nombre_operacion = "{} - {}".format(nombre, agenda_telefonica[nombre])
     except KeyError:
-        print('\n----- Agenda Telefonica ------ \n * Ese contacto No Existe \n------------------------------')
+        nombre_operacion = "* Ese contacto No Existe"
+    imprimir_operacion(nombre_operacion)
+
 
 def ver_list_contactos():
-    print()
+    nombre_operacion = None
+
     if len(agenda_telefonica) == 0:
-        print('\n----- Agenda Telefonica ------ \n * No tienes ningun contacto \n------------------------------')
+        nombre_operacion = "* No tienes ningun contacto"
     else:
-        print('----- Agenda Telefonica ------')
         for contacto in agenda_telefonica:
-            print ( f'{contacto} --  {agenda_telefonica[contacto]}')
-        print('------------------------------')
+            if nombre_operacion == None:
+                nombre_operacion = "{} - {}".format(contacto, agenda_telefonica[contacto])
+            else:
+                nombre_operacion += "\n{} - {}".format(contacto, agenda_telefonica[contacto])
+    imprimir_operacion(nombre_operacion)
 
 
 
