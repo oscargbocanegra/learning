@@ -1,11 +1,11 @@
 agenda_telefonica = dict()
 
-print ("Bienvenido a mi Agenda Telefonica...")
+
 
 def imprimir_operacion(nombre_operacion):
-    print ("---------- Agenda Telefonica ----------")
+    print ("\n---------- Agenda Telefonica ----------")
     print (nombre_operacion)
-    print ("---------------------------------------")
+    print ("---------------------------------------\n")
 
 def agregar_contacto():
     print()
@@ -58,37 +58,42 @@ def ver_list_contactos():
                 nombre_operacion += "\n{} - {}".format(contacto, agenda_telefonica[contacto])
     imprimir_operacion(nombre_operacion)
 
+def iniciar_agenda():
+    print ("Bienvenido a mi Agenda Telefonica...")
+    while True:
+        print()
+        print ("1 - Agregar un contacto")
+        print ("2 - Remover un contacto")
+        print ("3 - Actalizar contactos")
+        print ("4 - Ver un contacto")
+        print ("5 - Ver todos los contactos")
+        print ("6 - Salir")
+        print()
 
-
-while True:
-    print()
-    print ("1 - Agregar un contacto")
-    print ("2 - Remover un contacto")
-    print ("3 - Actalizar contactos")
-    print ("4 - Ver un contacto")
-    print ("5 - Ver todos los contactos")
-    print ("6 - Salir")
-    print()
-
-    try:
-        operacion = int(input("Escoja Opcion : "))
-    except ValueError:
-        print('\n----- Agenda Telefonica ------ \n * Selecciona un numero de 1 a 6 \n------------------------------')
-    else:
-        if operacion == 1:
-            agregar_contacto()
-        elif operacion == 2:
-            remover_contacto()
-        elif operacion == 3:
-            actualizar_contacto()
-        elif operacion == 4:
-            ver_contacto()
-        elif operacion == 5:
-            ver_list_contactos()
-        elif operacion == 6:
-            break
+        try:
+            operacion = int(input("Escoja Opcion : "))
+        except ValueError:
+            imprimir_operacion("* Selecciona un numero de 1 a 6")
         else:
-            print('\n----- Agenda Telefonica ------ \n * Operacion Desconocida \nIntente nuevamente de 1 a 6 \n------------------------------')
+            if operacion == 1:
+                agregar_contacto()
+            elif operacion == 2:
+                remover_contacto()
+            elif operacion == 3:
+                actualizar_contacto()
+            elif operacion == 4:
+                ver_contacto()
+            elif operacion == 5:
+                ver_list_contactos()
+            elif operacion == 6:
+                break
+            else:
+                imprimir_operacion("* Operacion Desconocida")
 
-print('\n----- Agenda Telefonica ------ \n * Gracias por usar nuestro servicio de Agendas Telefonicas \n------------------------------')
-  
+def dar_despedida():
+    imprimir_operacion("* Gracias por usar nuestro servicio \nde Agendas Telefonicas")
+
+
+iniciar_agenda()
+dar_despedida()
+
