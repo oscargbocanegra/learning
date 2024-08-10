@@ -28,6 +28,7 @@ snake_speed = 15
 font_style = pygame.font.SysFont(None, 35)
 score_font = pygame.font.SysFont(None, 35)
 
+# update
 def score(score):
     value = score_font.render("Your Score: " + str(score), True, yellow)
     dis.blit(value, [0, 0])
