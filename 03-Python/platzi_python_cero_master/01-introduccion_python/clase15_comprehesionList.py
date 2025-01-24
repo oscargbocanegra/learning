@@ -15,3 +15,4 @@ transposed = [[row[i] for row in matrix] for i in range(3)]
 
 print(matrix)
 print(transposed)
+
