@@ -19,6 +19,7 @@ public class Diccionarios {
 
         for (String key : diccionario.keySet()) {
             System.out.println(key + " -> " + diccionario.get(key));
+            System.out.println();
         }
     }
 }
