@@ -3,45 +3,30 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pageobjects.SignUppageObject;
+import pageobjects.SignUpServices;
+import util.HookDriver;
 
 public class SignUpStepDefs {
 
-
     @Given("^Pepito wants to have an account$")
-    public void pepito_wants_to_have_an_account() {
+    public void pepito_wants_to_have_an_account() throws InterruptedException {
 
-
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") +
-                "\\src\\test\\resources\\drivers\\windows\\chromedriver.exe");
-
-        WebDriver driver = new ChromeDriver();
-        SignUppageObject signUpPageObject = new SignUppageObject(driver);
-
-        /**
-         * Opcion para Configurar automáticamente ChromeDriver
-         *
-         *         WebDriverManager.chromedriver().setup();
-         *         driver = new ChromeDriver();
-         *         SignUppageObject signUpPageObject = new SignUppageObject(driver);
-         */
-
-        signUpPageObject.go("https://demo.automationtesting.in/Register.html");
-        signUpPageObject.writeFirstName("Pepito");
-        signUpPageObject.writeLastName("Perez");
-        signUpPageObject.writeEmail("pepitoperez@email.com");
-        signUpPageObject.writePhone("1234567890");
-        signUpPageObject.selectMale();
-        signUpPageObject.selectCountry("Mexico");
-        signUpPageObject.selectBirthYear("1990");
-        signUpPageObject.selectBirthMonth("January");
-        signUpPageObject.selectBirthDay("1");
-        signUpPageObject.writePassword("password");
-        signUpPageObject.writeConfirmPassword("password");
-        signUpPageObject.clickSubmit();
-
+        SignUpServices signUp = new SignUpServices(HookDriver.driver);
+        signUp.go("https://demo.automationtesting.in/Register.html");
+        signUp.writeFirstName("Pepito");
+        signUp.writeLastName("Perez");
+        signUp.writeEmail("pepitoperez@email.com");
+        signUp.writePhone("1234567890");
+        signUp.selectMale();
+        signUp.selectCountry("Mexico");
+        signUp.selectBirthYear("1990");
+        signUp.selectBirthMonth("January");
+        signUp.selectBirthDay("1");
+        signUp.writePassword("password");
+        signUp.writeConfirmPassword("password");
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        //signUp.clickSubmit(wait);
+        Thread.sleep(8000);
     }
 
     @When("^he sends required information to get the account$")
