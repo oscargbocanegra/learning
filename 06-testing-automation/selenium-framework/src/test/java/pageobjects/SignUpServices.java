@@ -1,24 +1,25 @@
 package pageobjects;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class SignUpServices {
 
-    private WebDriver driver;
+    @Autowired
     private  SignUpPageObject signUpPageObject;
 
+    private WebDriver driver;
+
+    @Autowired
     public SignUpServices(WebDriver driver) {
+        if (driver == null) {
+            throw new IllegalStateException("ERROR: WebDriver no ha sido inyectado correctamente.");
+        }
         this.driver = driver;
-        signUpPageObject = new SignUpPageObject(driver);
     }
+
 
     public void go(String url) {this.driver.get(url);}
 
@@ -70,11 +71,11 @@ public class SignUpServices {
         this.signUpPageObject.getConfirmPassword().sendKeys(confirmPassword);
     }
 
-/*    public void clickSubmit() {
+    public void clickSubmit() {
         this.signUpPageObject.getSubmit().click();
-    }*/
+    }
 
-    public void clickSubmit(WebDriverWait wait) {
+    /*public void clickSubmit(WebDriverWait wait) {
 
         signUpPageObject = new SignUpPageObject(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 seconds timeout
@@ -102,5 +103,5 @@ public class SignUpServices {
 
         // Hacer clic en el botón usando JavaScript para evitar superposiciones
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
-    }
+    }*/
 }

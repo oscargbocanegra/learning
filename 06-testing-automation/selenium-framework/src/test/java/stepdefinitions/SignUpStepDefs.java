@@ -3,15 +3,24 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pageobjects.SignUpServices;
-import util.HookDriver;
+
 
 public class SignUpStepDefs {
 
-    @Given("^Pepito wants to have an account$")
-    public void pepito_wants_to_have_an_account() throws InterruptedException {
+    @Autowired
+    private final SignUpServices signUp;
 
-        SignUpServices signUp = new SignUpServices(HookDriver.driver);
+    @Autowired
+    public SignUpStepDefs(SignUpServices signUp) {
+        this.signUp = signUp;
+    }
+
+    @Given("^Pepito wants to have an account$")
+    public void pepito_wants_to_have_an_account() {
+
         signUp.go("https://demo.automationtesting.in/Register.html");
         signUp.writeFirstName("Pepito");
         signUp.writeLastName("Perez");
@@ -24,9 +33,7 @@ public class SignUpStepDefs {
         signUp.selectBirthDay("1");
         signUp.writePassword("password");
         signUp.writeConfirmPassword("password");
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //signUp.clickSubmit(wait);
-        Thread.sleep(8000);
+        signUp.clickSubmit();
     }
 
     @When("^he sends required information to get the account$")
