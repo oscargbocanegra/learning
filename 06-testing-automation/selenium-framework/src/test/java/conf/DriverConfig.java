@@ -1,42 +1,35 @@
 package conf;
 
+import enums.Browser;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.Objects;
+import org.springframework.context.annotation.PropertySource;
+import util.driver.DriverFactory;
+import java.time.Duration;
 
 @Configuration
 @ComponentScan(basePackages = {"pageobjects", "stepdefinitions"})
+@PropertySource("classpath:/application-${env:dev}.properties")
 public class DriverConfig {
 
-    @Bean(destroyMethod = "quit") // Cierra el WebDriver al final
+    @Value("${driver.type}")
+    private Browser driverType;
+
+    @Value("${element.wait.timeout.seconds}")
+    private int webDriverWaitTimeOut;
+
+    @Bean
     public WebDriver webDriver() {
-        String os = System.getProperty("os.name").toLowerCase();
-        String driverPath;
+        return DriverFactory.get(driverType);
+     }
 
-        if (os.contains("win")) {
-            driverPath = driverPath = Objects.requireNonNull(getClass().getClassLoader()
-                            .getResource("drivers/windows/chromedriver.exe"))
-                    .getPath();
-        } else if (os.contains("linux")) {
-            driverPath = getClass().getClassLoader().getResource("drivers/linux/chromedriver").getPath();
-        } else if (os.contains("mac")) {
-            driverPath = getClass().getClassLoader().getResource("drivers/mac/chromedriver").getPath();
-        } else {
-            throw new UnsupportedOperationException("Sistema operativo no soportado: " + os);
-        }
-
-        System.setProperty("webdriver.chrome.driver", driverPath);
-
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
-        options.addArguments("--disable-notifications");
-        options.addArguments("--remote-allow-origins=*");
-
-        return new ChromeDriver(options);
+    @Bean
+    public WebDriverWait waitFor() {
+        return new WebDriverWait(webDriver(), Duration.ofSeconds(webDriverWaitTimeOut));
     }
 }
+

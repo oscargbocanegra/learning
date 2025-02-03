@@ -4,24 +4,21 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
 import pageobjects.SignUpServices;
-
 
 public class SignUpStepDefs {
 
     @Autowired
-    private final SignUpServices signUp;
+    private SignUpServices signUp;
 
-    @Autowired
-    public SignUpStepDefs(SignUpServices signUp) {
-        this.signUp = signUp;
-    }
+    @Value("${url}")
+    private String url;
 
     @Given("^Pepito wants to have an account$")
     public void pepito_wants_to_have_an_account() {
 
-        signUp.go("https://demo.automationtesting.in/Register.html");
+        signUp.go(url);
         signUp.writeFirstName("Pepito");
         signUp.writeLastName("Perez");
         signUp.writeEmail("pepitoperez@email.com");

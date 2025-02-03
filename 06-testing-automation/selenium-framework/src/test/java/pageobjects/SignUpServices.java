@@ -1,8 +1,14 @@
 package pageobjects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.time.Duration;
 
 @Service
 public class SignUpServices {
@@ -72,36 +78,11 @@ public class SignUpServices {
     }
 
     public void clickSubmit() {
-        this.signUpPageObject.getSubmit().click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("submitbtn")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitButton);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
     }
 
-    /*public void clickSubmit(WebDriverWait wait) {
-
-        signUpPageObject = new SignUpPageObject(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // 10 seconds timeout
-
-        try {
-            // Esperar a que el botón sea clickeable
-            WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("submitbtn")));
-
-            // Hacer scroll hasta el botón
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitButton);
-
-            // Hacer clic en el botón usando JavaScript para evitar problemas de superposición
-            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
-
-            System.out.println("Formulario enviado correctamente.");
-        } catch (Exception e) {
-            System.out.println("No se encontró ningún iframe de publicidad.");
-        }
-
-        // Asegurar que el botón "Submit" sea visible y clickeable
-        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("submitbtn")));
-
-        // Hacer scroll para asegurarse de que el botón es visible
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitButton);
-
-        // Hacer clic en el botón usando JavaScript para evitar superposiciones
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
-    }*/
 }
