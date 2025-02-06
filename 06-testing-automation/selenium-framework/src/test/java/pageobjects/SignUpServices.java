@@ -16,20 +16,16 @@ public class SignUpServices {
     @Autowired
     private  SignUpPageObject signUpPageObject;
 
-    private WebDriver driver;
+    @Autowired
+    private WebDriverWait wait;
 
     @Autowired
-    public SignUpServices(WebDriver driver) {
-        if (driver == null) {
-            throw new IllegalStateException("ERROR: WebDriver no ha sido inyectado correctamente.");
-        }
-        this.driver = driver;
-    }
-
+    private WebDriver driver;
 
     public void go(String url) {this.driver.get(url);}
 
     public void writeFirstName(String firstName) {
+        this.wait.until(ExpectedConditions.visibilityOf(this.signUpPageObject.getFirstNameTextbox()));
         this.signUpPageObject.getFirstNameTextbox().sendKeys(firstName);
     }
 

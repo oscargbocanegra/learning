@@ -1,40 +1,38 @@
 package stepdefinitions;
 
+import builders.data.UserBuilder;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import pageobjects.SignUpServices;
+import stepdefinitions.tasks.NavigateTo;
+import stepdefinitions.tasks.UserSignUp;
 
 public class SignUpStepDefs {
 
     @Autowired
-    private SignUpServices signUp;
+    private UserSignUp signUp;
 
-    @Value("${url}")
-    private String url;
+    @Autowired
+    private NavigateTo navigate;
 
     @Given("^Pepito wants to have an account$")
     public void pepito_wants_to_have_an_account() {
-
-        signUp.go(url);
-        signUp.writeFirstName("Pepito");
-        signUp.writeLastName("Perez");
-        signUp.writeEmail("pepitoperez@email.com");
-        signUp.writePhone("1234567890");
-        signUp.selectMale();
-        signUp.selectCountry("Mexico");
-        signUp.selectBirthYear("1990");
-        signUp.selectBirthMonth("January");
-        signUp.selectBirthDay("1");
-        signUp.writePassword("password");
-        signUp.writeConfirmPassword("password");
-        signUp.clickSubmit();
+        navigate.signUpPage();
     }
 
     @When("^he sends required information to get the account$")
-    public void he_sends_required_information_to_get_the_account() {
+    public void he_sends_required_information_to_get_the_account() throws InterruptedException {
+        signUp.withInfo(
+                UserBuilder
+                        .anUser()
+                        .but()
+                        .withoutBirthDay()
+                        .withoutEmail()
+                        .build()
+        );
+
+        Thread.sleep(7000);
     }
 
     @Then("^he should be told that the account was created$")
