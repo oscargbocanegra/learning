@@ -1,5 +1,6 @@
 package pageobjects;
 
+import enums.Gender;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -41,11 +42,9 @@ public class SignUpServices {
         this.signUpPageObject.getPhone().sendKeys(phone);
     }
 
-    public void selectMale() {
-        this.signUpPageObject.getGenderMale().click();
-    }
+    private void selectMale() {this.signUpPageObject.getGenderMale().click();    }
 
-    public void selectFemale() {
+    private void selectFemale() {
         this.signUpPageObject.getGenderFemale().click();
     }
 
@@ -81,4 +80,11 @@ public class SignUpServices {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", submitButton);
     }
 
+    public void selectGender(Gender gender){
+        if (gender  == Gender.female){
+            selectFemale();
+        } else {
+            selectMale();
+        }
+    }
 }

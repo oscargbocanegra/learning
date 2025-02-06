@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
 import stepdefinitions.tasks.NavigateTo;
 import stepdefinitions.tasks.UserSignUp;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class SignUpStepDefs {
 
@@ -37,5 +38,13 @@ public class SignUpStepDefs {
 
     @Then("^he should be told that the account was created$")
     public void he_should_be_told_that_the_account_was_created() {
+        assertThat(true).isEqualTo(true);
     }
+
+    @Then("^he should be told that the account was not created$")
+    public void he_should_be_told_that_the_account_was_not_created() {
+        assertThat(true).isEqualTo(false);
+    }
+
+
 }

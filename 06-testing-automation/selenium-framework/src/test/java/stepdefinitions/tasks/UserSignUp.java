@@ -18,20 +18,12 @@ public class UserSignUp {
         signUp.writeFirstName(user.getFirstName());
         signUp.writeLastName(user.getLastName());
         signUp.writeEmail(user.getEmail());
-
-        if (user.getGender() == Gender.female){
-            signUp.selectFemale();
-        } else {
-            signUp.selectMale();
-        }
-
+        signUp.selectGender(user.getGender());
         signUp.selectCountry(user.getCountry());
         signUp.selectBirthDay(user.getBirthDay());
         signUp.selectBirthMonth(user.getBirthMonth());
         signUp.selectBirthYear(user.getBirthYear());
         signUp.writePhone(RandomNumberGenerator.get());
-        signUp.selectMale();
-
         signUp.writePassword(user.getPassword());
         signUp.writeConfirmPassword(user.getPasswordConfirmation());
         //signUp.clickSubmit();
