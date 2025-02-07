@@ -1,3 +1,4 @@
+@regression
 Feature: client sign up
 
   Scenario: client sign up successfully

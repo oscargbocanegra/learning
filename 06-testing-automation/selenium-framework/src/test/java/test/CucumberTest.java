@@ -8,11 +8,12 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepdefinitions"},
+        tags = "@regression",
         plugin = {
                 "pretty",
-                "json:target/cucumber-reports/Cucumber.json", // ¡Asegúrate de que esta línea está presente!
-                "html:target/cucumber-reports/cucumber-html-report.html",
-                "junit:target/cucumber-reports/Cucumber.xml",
+                "json:target/cucumber-reports/json/Cucumber.json",
+                "html:target/cucumber-reports/html/cucumber-html-report.html",
+                "junit:target/cucumber-reports/junit/Cucumber.xml",
                 "rerun:target/rerun.txt",
                 "tech.grasshopper.extentreports.cucumber7.ExtentReportsCucumber7Adapter:"
         },

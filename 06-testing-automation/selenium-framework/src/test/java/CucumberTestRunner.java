@@ -6,8 +6,9 @@ import io.cucumber.junit.platform.engine.Constants;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("features") // Asegura que esta ruta sea correcta
-@ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "stepdefinitions")
-@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-reports.html")
+@SelectClasspathResource("features")
+@ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME, value = "stepdefinitions, stepdefinitions.tasks")
+@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,
+        value = "pretty, html:target/cucumber-reports.html, json:target/cucumber-reports/json/Cucumber.json")
 public class CucumberTestRunner {
 }

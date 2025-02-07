@@ -94,6 +94,7 @@
             <version>1.10.1</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -112,18 +113,12 @@
             <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>3.2.0</version>
             <scope>test</scope>
-        </dependency>
-
-        <!-- Plugin para generar reportes HTML mejorados -->
-        <dependency>
-            <groupId>net.masterthought</groupId>
-            <artifactId>maven-cucumber-reporting</artifactId>
-            <version>5.7.6</version>
         </dependency>
 
     </dependencies>
@@ -138,12 +133,12 @@
                 <configuration>
                     <argLine>--add-opens java.base/java.util=ALL-UNNAMED</argLine>
                     <includes>
-                        <include>**/CucumberTest.java</include>
+                        <include>**/CucumberTestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
 
-            <!-- Plugin para generar reportes con cucumber-reporting -->
+            <!-- Plugin para generar reportes de Cucumber -->
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
@@ -157,14 +152,12 @@
                         </goals>
                         <configuration>
                             <projectName>Cucumber Reports</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-                            <jsonFiles>${basedir}/target/cucumber-reports/Cucumber.json</jsonFiles>
+                            <outputDirectory>${project.build.directory}/cucumber-reports/reports</outputDirectory>
+                            <jsonFiles>${project.build.directory}/cucumber-reports/json/Cucumber.json</jsonFiles>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
-
         </plugins>
     </build>
 
