@@ -1,3 +1,4 @@
+/*
 package util.reporting;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +11,7 @@ import io.restassured.response.Response;
 public class HookReporter {
 
     private static final String ELASTICSEARCH_URL = "http://localhost:9200/automation/_doc/";
-    private static final String executionId = "12b27564-42c7-4824-ad90-8fba4bde2222";
+    private static final String executionId = "12b27564-42c7";
 
     @After
     public void reportFinalScenarioStatus(Scenario scenario) {
@@ -62,3 +63,4 @@ public class HookReporter {
         }
     }
 }
+*/

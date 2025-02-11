@@ -7,12 +7,13 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"stepdefinitions"},
+        glue = {"stepdefinitions", "util.reporting"},
         tags = "@regression",
         plugin = {
                 "pretty",
                 "json:target/cucumber-reports/json/Cucumber.json",
                 "html:target/cucumber-reports/html/cucumber-html-report.html",
+                "util.reporting.JReporter",
                 "junit:target/cucumber-reports/junit/Cucumber.xml",
                 "rerun:target/rerun.txt",
                 "tech.grasshopper.extentreports.cucumber7.ExtentReportsCucumber7Adapter:"
