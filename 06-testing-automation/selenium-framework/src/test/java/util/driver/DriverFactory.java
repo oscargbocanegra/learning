@@ -11,15 +11,15 @@ public class DriverFactory {
     private static String pathFormat = System.getProperty("user.dir") + "\\src\\test\\resources\\drivers\\windows\\%s";
 
     public static WebDriver get(Browser browser) {
-        if (browser == Browser.CHROME) {
+        if (browser == Browser.chrome) {
             System.setProperty("webdriver.chrome.driver", String.format(pathFormat, "chromedriver.exe"));
             return new ChromeDriver();
         }
-        if (browser == Browser.FIREFOX) {
+        if (browser == Browser.firefox) {
             System.setProperty("webdriver.gecko.driver", String.format(pathFormat, "geckodriver.exe")); // Corregido
             return new FirefoxDriver();
         }
-        if (browser == Browser.EDGE) {
+        if (browser == Browser.edge) {
             System.setProperty("webdriver.edge.driver", String.format(pathFormat, "msedgedriver.exe")); // Corregido
             return new EdgeDriver();
         }

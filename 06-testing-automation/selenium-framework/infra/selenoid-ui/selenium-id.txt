@@ -1,0 +1,31 @@
+Si quieres ver la versión del programa:
+.\cm_windows_386.exe version
+
+Si necesitas ayuda sobre un comando específico, por ejemplo selenoid:
+.\cm_windows_386.exe selenoid --help
+
+Si deseas instalar y ejecutar Selenoid:
+.\cm_windows_386.exe selenoid
+
+Descargar la última versión de Selenoid UI
+.\cm_windows_386.exe selenoid-ui download
+
+Iniciar Selenoid UI
+.\cm_windows_386.exe selenoid-ui start
+
+Ver el estado de Selenoid UI
+.\cm_windows_386.exe selenoid-ui status
+
+Detener Selenoid UI
+.\cm_windows_386.exe selenoid-ui stop
+
+Actualizar y ejecutar Selenoid UI
+.\cm_windows_386.exe selenoid-ui update
+
+Eliminar rastros de Selenoid UI (limpieza)
+.\cm_windows_386.exe selenoid-ui cleanup
+
+
+
+
+Ingresar a selenium-id por la URL: http://localhost:8080/#/
