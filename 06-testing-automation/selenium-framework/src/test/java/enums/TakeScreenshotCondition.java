@@ -4,5 +4,6 @@ public enum TakeScreenshotCondition {
     everyStep,
     failingScenario,
     endOfScenario,
-    none
+    none,
+    end
 }
