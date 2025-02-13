@@ -25,7 +25,7 @@ Actualizar y ejecutar Selenoid UI
 Eliminar rastros de Selenoid UI (limpieza)
 .\cm_windows_386.exe selenoid-ui cleanup
 
-
-
-
 Ingresar a selenium-id por la URL: http://localhost:8080/#/
+
+Proyecto: https://github.com/jdmesalosada/selenium-framework-poc
+
