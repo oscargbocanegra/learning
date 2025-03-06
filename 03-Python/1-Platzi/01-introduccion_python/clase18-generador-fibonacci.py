@@ -4,5 +4,5 @@ def fibonacci(limit):
         yield a 
         a, b = b, a + b
 
-for num in fibonacci(10):
+for num in fibonacci(20):
     print(num)
