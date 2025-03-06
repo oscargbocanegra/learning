@@ -17,7 +17,7 @@ print(next(my_iter))
 
 # Iterador con for
 for i in my_iter:
-    print(i)
+    print('Iterando  ' + i)
 
 print('************************************')
 
