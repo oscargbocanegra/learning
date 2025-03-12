@@ -70,5 +70,13 @@
         "brand": "ChargerMaster",
         "category": "Accesories",
         "entry_date": "2025-3-06"
+    },
+    {
+        "name": "Laptop",
+        "price": 1300,
+        "quantity": 100,
+        "brand": "ChargerMaster",
+        "category": "Accesories",
+        "entry_date": "2025-3-06"
     }
 ]
