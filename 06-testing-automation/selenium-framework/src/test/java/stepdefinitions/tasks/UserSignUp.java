@@ -1,9 +1,9 @@
 package stepdefinitions.tasks;
 
-import enums.Gender;
-import models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import models.User;
 import pageobjects.SignUpServices;
 import util.RandomNumberGenerator;
 
