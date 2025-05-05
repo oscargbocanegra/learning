@@ -1,0 +1,3 @@
+- Hola mundo, cambios realizados
+- Nuevos cambios
+- git show agregado
