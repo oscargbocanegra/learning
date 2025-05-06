@@ -20,3 +20,4 @@ ENV PORT=${PORT}
 EXPOSE ${PORT}
 
 CMD ["nginx", "-g", "daemon off;"]
+
