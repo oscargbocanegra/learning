@@ -4,3 +4,5 @@
 pruebas
 
 creando el feature/conceptos
+
+configurando y corrigiendo error con stash
