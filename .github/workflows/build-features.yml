@@ -1,0 +1,33 @@
+name: Compilación y Tests en Ramas de Features
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'feature*'
+  pull_request:
+    branches:
+      - 'feature/**'
+      - 'feature*'
+
+jobs:
+  build-feature:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout del código
+       
+        run: |
+          echo "pulling and checking out from repository"
+
+      - name: Configurar JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+      
+      - name: build with maven
+        run: |
+          mvn clean install
+          
+          
